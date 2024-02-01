@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            background-color: #1b1111;
+        }
+        .frm{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 100px;
+        }
+        h1{
+            font-size: 10px;
+            background-color: dimgray;
+            padding: 0%;
+            
+        }
+        .container{
+            width:200px;
+            height: fit-content;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: dimgray;
+            border: 2px solid bisque;
+        }
+        #total{
+            border:none;
+            width:170px;
+            height: 30px;
+            direction: rtl;
+            background-color: dimgray;
+            border: none;
+        }
+        .bt{
+            width: 40px;
+            padding: 10px;
+            /* //margin:1px; */
+            background-color: dimgray;
+            border: 2px solid rgb(53, 27, 27);
+            box-shadow:-8px -8px #888 5px 10px #888888;
+            justify-content:right;
+            border-radius: 5px;
+            color: #6e2424;
+        }
+        .bt:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        .buttonContainer{
+            background-color: dimgray;
+        }
+        #equal{
+            width: 84px;
+        }
+    </style>
+</head>
+<body>
+    <form class="frm">
+        <div class="container">
+       <div class="display">
+        <h1>CALCULATOR</h1>
+        <input type="text" id="total" name="display">
+      </div>
+      <div class="buttonContainer">
+      <input type="button" value="AC" class="bt" onclick="display.value= ' '">
+      <input type="button" value="De" class="bt" onclick="display.value=display.value.toString().slice(0,-1)">
+      <input type="button" value="." class="bt" onclick="display.value+='.'">
+      <input type="button" value="/" class="bt" onclick="display.value+='/'">
+      </div>
+      <div class="buttonContainer">
+        <input type="button" value="7" class="bt" onclick="display.value+='7' ">
+        <input type="button" value="8" class="bt" onclick="display.value+='8' ">
+        <input type="button" value="9" class="bt" onclick="display.value+='9' ">
+        <input type="button" value="*" class="bt" onclick="display.value+='*'">
+        </div>
+        <div class="buttonContainer">
+            <input type="button" value="4" class="bt" onclick="display.value+='4'">
+            <input type="button" value="5" class="bt" onclick="display.value+='5' ">
+            <input type="button" value="6" class="bt" onclick="display.value+='6' ">
+            <input type="button" value="-" class="bt" onclick="display.value+='-'">
+        </div>
+        <div class="buttonContainer">
+            <input type="button" value="1" class="bt" onclick="display.value+='1'">
+            <input type="button" value="2" class="bt" onclick="display.value+='2'">
+            <input type="button" value="3" class="bt" onclick="display.value+='3'">
+            <input type="button" value="+" class="bt" onclick="display.value+='+'">
+        </div>
+        <div class="buttonContainer">
+            <input type="button" value="0" class="bt" onclick="display.value+='0'">
+            <input type="button" value="00" class="bt" onclick="display.value+='00'">
+            <input type="button" value="=" id="equal" class="bt" onclick="display.value=eval(display.value)">
+        </div>
+      <!-- <button onclick="myFunction()">Calculate</button> -->
+     </div>
+    </form>
+     <script>
+        function myFunction(){
+            let n1=document.getElementById('first').value;
+            let n2=document.getElementById('second').value;
+            let t=parseInt(n1)+parseInt(n2);
+            console.log(t);
+            document.getElementById('total').value=t;
+        }
+     </script>
+</body>
+</html>
